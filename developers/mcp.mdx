@@ -1,38 +1,145 @@
 ---
-title: "Connect AI assistants to Suresign with MCP (coming soon)"
-sidebarTitle: "MCP"
-description: "Suresign plans a Model Context Protocol (MCP) server so AI assistants like Claude and Cursor can work with your workspace documents. Learn what to expect."
+title: "Use Suresign from Claude, ChatGPT, and other AI assistants (MCP)"
+sidebarTitle: "AI assistants (MCP)"
+description: "Connect Claude, ChatGPT, Cursor, Claude Code, or any MCP assistant to Suresign. Find documents, send templates, and remind signers, with every send confirmed by you."
 ---
 
-The Model Context Protocol (MCP) is an open standard that lets AI assistants, such as Claude or Cursor, connect to outside tools. A Suresign MCP server will let those assistants work with your workspace in the same careful way the built-in [agent](/agent/overview) does.
+Suresign has a Model Context Protocol (MCP) server, so you can use it from your own AI assistant. The assistant acts as you: it sees what you can see, and anything it sends waits for your click on Suresign's card.
 
-<Info>
-  MCP support is coming soon. This page will be updated with setup steps when it is available.
-</Info>
+## What it needs
 
-## What it is for
+|  |  |
+| --- | --- |
+| Plans | Every plan. Sending from an assistant needs Pro or higher |
+| Assistant | Claude, ChatGPT, Cursor, Claude Code, or any assistant that adds MCP connectors by address, with sign-in |
+| Who | Each person connects their own assistant |
 
-If you already use an AI assistant at work, MCP lets you ask it about your agreements without switching apps. For example: "Which documents are still waiting for a signature?"
+## Connect your assistant
 
-## What will not change
+Go to **Integrations** > **AI assistants** in Suresign and copy the connector address. It ends in `/mcp`.
 
-The same rules that keep the built-in agent safe are the product's rules, not a prompt's:
+<Tabs>
+  <Tab title="Claude">
+    <Steps>
+      <Step title="Open Connectors">
+        In Claude, open **Settings**, then **Connectors**.
+      </Step>
+      <Step title="Add the connector">
+        Choose **Add custom connector**, name it Suresign, and paste the address.
+      </Step>
+      <Step title="Sign in">
+        Sign in to Suresign when it asks, and press **Allow**.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="ChatGPT">
+    <Steps>
+      <Step title="Open connectors">
+        In ChatGPT, open **Settings**, then **Apps and connectors**.
+      </Step>
+      <Step title="Create a connector">
+        Create a connector with the address. If it asks, turn on developer mode under **Advanced**.
+      </Step>
+      <Step title="Sign in">
+        Sign in to Suresign when it asks, and allow access.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="Cursor and Claude Code">
+    In Cursor, go to **Settings** > **MCP** > **Add new server**, then paste:
+
+    ```json
+    {
+      "mcpServers": {
+        "suresign": {
+          "url": "YOUR_CONNECTOR_ADDRESS"
+        }
+      }
+    }
+    ```
+
+    In Claude Code, run this in a terminal:
+
+    ```bash
+    claude mcp add --transport http suresign YOUR_CONNECTOR_ADDRESS
+    ```
+
+    Each asks you to sign in to Suresign the first time it is used.
+  </Tab>
+  <Tab title="Another assistant">
+    Any assistant that adds MCP connectors by address, with sign-in, can use Suresign. Add a connector, paste the address, and sign in when asked.
+  </Tab>
+</Tabs>
+
+## What your assistant can do
+
+- Find documents and say who still has to sign.
+- Send from your templates, after you confirm each send (Pro and higher).
+- Remind people and move expiry dates, under your workspace's rules.
+- Read a document's words when you ask about it, if your workspace allows it.
+- Add a PDF or Word file (up to 3 MB) as a draft and place the boxes on it.
+- Give you a download link for the signed copy, certificate, or original. The link works for 10 minutes.
+
+It can never sign for you, delete or cancel documents, change settings, or invite people.
+
+### Available tools
+
+| Tool | What it does |
+| --- | --- |
+| `who_am_i` | Who the connection acts as, the plan, documents left this month, and what the assistant may do |
+| `find_documents` | Search documents by title, person, or status |
+| `get_document` | Status, people, signing order, expiry, and recent history of one document |
+| `list_templates` | The workspace's templates and the roles each one needs |
+| `find_contacts` | Look people up by name, email, or company |
+| `read_document` | A document's words, page by page |
+| `find_text` | Where a word or phrase appears in a document |
+| `download_document` | A 10-minute download link for a PDF |
+| `upload_document` | Add a file as a draft. Nothing is sent |
+| `read_layout` | Where people sign on a draft's pages |
+| `prepare_document` | Place people and boxes on a draft |
+| `send_template` | Send from a template, after you confirm |
+| `send_document` | Send a prepared draft, after you confirm |
+| `send_reminders` | Remind people still to sign, after you confirm |
+| `extend_document` | Move a document's expiry date later, after you confirm |
+| `check_confirmation` | Whether you have confirmed something the assistant asked for |
+
+## Confirm every send
+
+When your assistant wants to send a document, remind people, or move a date, Suresign shows a card in the chat with **Send** and **Not now**. Nothing reaches anyone until you press **Send**. Addresses you have not sent to before must be checked on the card.
+
+If your assistant cannot show the card, open **Integrations** > **AI assistants** in Suresign. Anything waiting appears under activity with **Confirm or decline**.
+
+If your workspace lets reminders and new dates go on their own, those skip the card. See [Staying in control](/agent/staying-in-control).
+
+<Note>
+  Nothing can be sent until your email address is confirmed in Suresign.
+</Note>
+
+## Manage your assistants
+
+**Integrations** > **AI assistants** lists every assistant you have connected, when it was last used, and what it did. Select **Disconnect** to end its access at once.
+
+## Rules for admins
+
+Admins set rules for everyone's assistants on the same page:
+
+- **Who can connect an assistant:** Everyone, Admins, or No one. Narrowing it disconnects the assistants it leaves out.
+- **Read documents' words:** when off, assistants see titles, people, and status, never contents.
+
+## What does not change
 
 - An assistant acts as you, with your role and permissions, never more.
-- Anything that reaches another person waits for your approval.
 - Every step is recorded in the document's [audit trail](/proof/audit-trail-and-certificate).
 - Your documents are never used to train any model.
-
-{/* TODO for the Suresign team: confirm MCP scope, then add the server URL, install steps per client, available tools and authentication. */}
 
 ## Next steps
 
 <CardGroup cols={2}>
-  <Card title="The Agent" icon="sparkles" href="/agent/overview">
-    Use the agent built into Suresign today.
+  <Card title="Integrations" icon="plug" href="/workspace/integrations">
+    Connect Drive, Slack, Sheets, and more.
   </Card>
 
-  <Card title="Staying in Control" icon="hand" href="/agent/staying-in-control">
-    How agent actions are approved.
+  <Card title="Staying in control" icon="hand" href="/agent/staying-in-control">
+    How approvals work.
   </Card>
 </CardGroup>
