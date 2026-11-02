@@ -1,0 +1,119 @@
+---
+title: "Manual and Auto: choose how much the Suresign agent does on its own"
+sidebarTitle: "Manual and Auto"
+description: "Every chat with the Suresign agent runs in Manual, where it asks before anything reaches someone, or Auto, where it works on autopilot and tells you what it did."
+---
+
+Every chat with the agent has a mode. You pick it in the chat's **Permissions** menu, beside the box where you type.
+
+- **Manual** always asks before anything reaches someone. The agent prepares the work and shows it on a card, and nothing happens until you approve it.
+- **Auto** puts the agent on autopilot. It does what you ask straight away, then tells you what it did.
+
+Every chat starts in Manual.
+
+<Note>
+  Auto is available on the Business plan, once a workspace admin allows it. See [For admins](#for-admins-allow-auto).
+</Note>
+
+## The two modes side by side
+
+| | Manual | Auto |
+| --- | --- | --- |
+| Sending, resending, and reminders | Waits on a card for you to approve | Done straight away |
+| Giving a document more time | Waits on a card | Done straight away |
+| Copies, open links, and invitations | Wait on a card | Done straight away |
+| Saving to an app or posting in Slack or Teams | Waits on a card | Done straight away |
+| Changes to a draft or to boxes it placed | Wait for you to accept or discard | Applied straight away |
+| Scheduling ("send it Monday at 9") | Waits on a card | Scheduled straight away |
+| Moving to Deleted, or cancelling a request | Waits on a card | Still waits on a card |
+| An address it found in a document or wrote itself | Waits for you to check it | Still waits for you to check it |
+| Signing or approving for anyone | Never | Never |
+
+## Manual: the agent asks first
+
+In Manual, the agent does the reading, drafting, and preparing, then stops. Anything that would reach another person, or change a document, appears on a card in the chat and in **Needs you**. The card shows exactly what will happen: who gets what, and when. You select the button to confirm, or decline it.
+
+Manual is the right mode when you want to check each step, when a document is new to you, or when you are working on something important.
+
+## Auto: the agent on autopilot
+
+In Auto, you give the agent a job and it carries it out. Ask it to "send the NDA to Dana Lee and remind her in three days", and it sends the NDA, sets the reminder, and tells you both are done. You don't press anything along the way.
+
+Each thing it did still shows on its card in the chat, marked **Done on Auto**, or **Accepted on Auto** for a change to a draft. You can see exactly what happened, in the same place you would have approved it.
+
+### What still asks on Auto
+
+Auto acts on what you asked. It does not take risks you didn't ask for:
+
+- **Deleting and cancelling** always wait on a card, however you ask.
+- **Addresses it isn't sure of** wait for you. If the agent found an email address in a document, or wrote one itself, the card marks it **Found in the document** or **Check this address**, and nothing goes to it until you confirm it.
+- **Questions** are still asked. If the agent needs something only you know, such as which of two Danas you mean, it asks rather than guessing.
+
+### What never happens, in either mode
+
+The agent can never sign or approve for anyone, get past an access code, delete anything for good, or change security settings, API keys, webhooks, or billing. Auto doesn't change that.
+
+## Switch a chat to Auto
+
+<Steps>
+  <Step title="Open the Permissions menu">
+    In a chat, or in the box on Home, select **Manual** next to the tools below where you type.
+  </Step>
+  <Step title="Choose Auto">
+    Select **Auto**. The mode's name turns blue, so a chat on Auto never looks like one that asks.
+  </Step>
+  <Step title="Send your message">
+    The mode goes with your next message and stays with that chat. Other chats keep their own mode.
+  </Step>
+</Steps>
+
+To go back, open the same menu and choose **Manual**. Anything already done stays done.
+
+If you don't see the menu, Auto isn't offered in your workspace. That can be because of your plan, because an admin hasn't allowed it, or because your role is Viewer.
+
+## For admins: allow Auto
+
+Auto is off in every workspace until an admin turns it on.
+
+<Steps>
+  <Step title="Open the agent's settings">
+    Go to **Settings** > **Agent**.
+  </Step>
+  <Step title="Allow it">
+    Under **What it may do on its own**, switch on **Let people put a chat on Auto**.
+  </Step>
+</Steps>
+
+Once it is on, each person decides for each of their own chats. Turning it off again puts every chat on Auto back on Manual at once.
+
+Auto acts as the person using it, with their role. A member on Auto can do only what that member could approve on a card. Viewers can't put a chat on Auto.
+
+## Auto and automations
+
+Both let the agent work without you pressing a button each time, but they do different jobs:
+
+| | Auto | Automations |
+| --- | --- | --- |
+| What it is | Autopilot for one chat | A repeating job on a schedule |
+| When it runs | While you are talking to the agent | On its schedule, with no chat open |
+| What it does | What you ask in that chat | One of five fixed jobs, such as chasing unsigned documents or warning before expiry |
+| What decides what runs alone | The chat's mode | The workspace's permissions for reminders and extensions |
+
+Chats on Auto and automations are set separately. Allowing Auto doesn't make automations run on their own, and allowing reminders and extensions to run on their own doesn't put any chat on Auto. See [Automations](/agent/automations).
+
+AI assistants connected to Suresign, such as Claude or ChatGPT, never use Auto. Every send from an assistant is still confirmed by you. See [AI assistants](/developers/mcp).
+
+## On the record
+
+Everything done on Auto is in the document's history like any other step, marked **with the agent on Auto**. It is never written down as something you approved, because you didn't approve it separately. It also appears in the agent's **Activity**.
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Staying in control" icon="shield" href="/agent/staying-in-control">
+    See every guarantee that keeps you in charge of the agent.
+  </Card>
+  <Card title="Ask and act" icon="message-circle" href="/agent/ask-and-act">
+    The kinds of tasks you can give the agent.
+  </Card>
+</CardGroup>

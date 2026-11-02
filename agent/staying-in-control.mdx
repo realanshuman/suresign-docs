@@ -10,7 +10,9 @@ The Suresign agent is built to help you, not act on its own. These guarantees ke
 
 Nothing the agent prepares ever reaches another person until you approve it. Every send, reminder, copy, and invitation appears on a card with a clear description. You press the button to confirm. If you do not press it, nothing happens.
 
-The only things the agent can do without asking are **reminders** and **extensions**, and only when a workspace admin has allowed each one. Nothing else runs on its own.
+Outside a chat on Auto, the only things the agent can do without asking are **reminders** and **extensions**, and only when a workspace admin has allowed each one. Nothing else runs on its own.
+
+A chat on **Auto** is the one exception, and you choose it yourself, chat by chat, where an admin allows it. On Auto the agent does what you ask straight away and tells you what it did. Deleting, cancelling, and sending to an address it isn't sure of still wait for you. See [Manual and Auto](/agent/manual-and-auto).
 
 ## The agent acts as you
 
@@ -22,18 +24,20 @@ If the agent finds an email address inside a document, it flags it for you to co
 
 ## Admins decide what runs alone
 
-On Business plans, workspace admins can allow the agent to send reminders and extend expiry dates automatically without asking each time.
+On Business plans, workspace admins can allow the agent to send reminders and extend expiry dates automatically without asking each time, and let people put a chat on Auto.
 
-To change this, go to **Settings > Agent > What the agent may do without asking**. Set each action to **Allowed** or **Ask first**. No other action can run on its own. Even with admin permission, sends, invitations, and copies always wait for your approval.
+To change this, go to **Settings > Agent > What it may do on its own**. Set each action to **Allowed** or **Ask first**. No other action can run on its own. Outside a chat on Auto, sends, invitations, and copies always wait for your approval.
 
 | Action | Free | Pro | Business |
 | --- | --- | --- | --- |
 | Send reminders to people already on a document | Ask first | Ask first | Admin chooses |
 | Give documents more time | Ask first | Ask first | Admin chooses |
+| Let people put a chat on Auto | Not offered | Not offered | Admin chooses |
 
 These actions are always fixed to **Ask first** or **Never**, no matter the plan:
 
-- **Always asks**: Send a new document, resend an expired one, cancel a request, turn on an open link, move to Deleted, invite someone
+- **Always asks**: Cancel a request, move to Deleted
+- **Asks, except in a chat on Auto**: Send a new document, resend an expired one, turn on an open link, invite someone
 - **Never**: Sign or approve for anyone, get past an access code, delete for good, change security, keys, webhooks, or billing
 
 ## Prompt-injection detection
@@ -83,6 +87,10 @@ These guarantees mean you can use the agent confidently. It handles the busy wor
 <CardGroup>
   <Card title="Draft an agreement" icon="pen" href="/agent/draft-an-agreement">
     Try the agent yourself and see the approval cards in action.
+  </Card>
+
+  <Card title="Manual and Auto" icon="gauge" href="/agent/manual-and-auto">
+    Choose, chat by chat, whether the agent asks first or works on autopilot.
   </Card>
 
   <Card title="Automations" icon="zap" href="/agent/automations">
