@@ -1,6 +1,6 @@
 ---
-title: "Integrations: connect Suresign to Drive, Slack, Sheets, and more"
-description: "Save signed copies to Google Drive, Dropbox, or OneDrive, tell a Slack or Teams channel when something is signed, and keep a row per document in Google Sheets."
+title: "Integrations: connect Suresign to Drive, Slack, your CRM, and more"
+description: "Save signed copies to Google Drive, Dropbox, Box, or OneDrive, tell Slack or Teams when something is signed, keep a row per document in Sheets, Notion, or Airtable, file signed copies in your CRM, and put expiry dates on a calendar."
 sidebarTitle: "Integrations"
 ---
 
@@ -10,12 +10,21 @@ Integrations send your documents to the apps your team already uses. Documents a
 
 | App | What it does | Plans |
 | --- | --- | --- |
-| Google Drive | Save every signed copy to a folder, and pick files from Drive when you send | Pro and Business |
-| Dropbox | Save signed copies to a Dropbox folder, and send files straight from it | Pro and Business |
-| OneDrive and SharePoint | Save signed copies to OneDrive or a SharePoint folder, and send files from there | Pro and Business |
+| Google Drive | Save every signed copy and its certificate to a folder, and start a document from a file in Drive | Pro and Business |
+| Dropbox | The same, with a Dropbox folder | Pro and Business |
+| Box | The same, with a Box folder | Pro and Business |
+| OneDrive and SharePoint | The same, with a OneDrive or SharePoint folder | Pro and Business |
 | Slack | Post in a channel when a document completes or is declined | Pro and Business |
 | Microsoft Teams | The same notices, in a Teams channel | Pro and Business |
 | Google Sheets | One row per document (title, people, status, dates), kept up to date | Pro and Business |
+| Notion | One row per document in a Notion database, kept up to date | Pro and Business |
+| Airtable | One record per document in an Airtable table, kept up to date | Pro and Business |
+| Google Calendar | An all-day event on the day a sent document expires, taken off once it completes, is declined, or is cancelled | Pro and Business |
+| Outlook Calendar | The same, in an Outlook calendar | Pro and Business |
+| HubSpot | The signed PDF and a note on each signer's contact or open deal, the deal moved on once everyone has signed, and a template ready to send when a deal reaches a stage | Business |
+| Salesforce | The same, for contacts and opportunities | Business |
+| Pipedrive | The same, for people and deals | Business |
+| Zoho CRM | The same, for contacts and deals | Business |
 | Zapier | Triggers when a document is sent, opened, completed, or declined. Actions to send a template or find a document | Every plan. Free has a few runs a month |
 | Make | The same triggers and actions as Zapier, for Make scenarios | Every plan. Free has a few runs a month |
 | API and webhooks | API keys and signed webhooks for your own systems, and a write API on Business | Pro and Business |
@@ -23,7 +32,7 @@ Integrations send your documents to the apps your team already uses. Documents a
 
 ### Coming soon
 
-Google Calendar, HubSpot, Salesforce, Zoho CRM, the Gmail add-on, and the Outlook add-in show as **Coming soon**. Select **Tell me when it's ready** on an app's page to get an email when it ships.
+The Gmail add-on and the Outlook add-in, for sending an email's attachment for signature without leaving your inbox, show as **Coming soon**. Select **Tell me when it's ready** on the app's page to get an email when it ships.
 
 Not seeing your app? [Tell us which one](https://suresign.si/contact). The most requested apps are built next.
 
@@ -33,7 +42,7 @@ Recipes are ready-made setups. Pick one, connect its app, and it runs on every n
 
 <AccordionGroup>
   <Accordion title="File every signed copy">
-    When any document completes, the signed PDF and its certificate are saved to the folder you pick in Google Drive, Dropbox, or OneDrive. Each file is named with the document's title and the date it completed. You can also turn on a folder for each client, and choose whether the certificate is saved as its own file beside the PDF.
+    When any document completes, the signed PDF and its certificate are saved to the folder you pick in Google Drive, Dropbox, Box, or OneDrive. Each file is named with the document's title and the date it completed. You can also turn on a folder for each client, and choose whether the certificate is saved as its own file beside the PDF.
   </Accordion>
   <Accordion title="Offer letters that file themselves">
     When a document from the template you pick completes, it is saved in the person's own folder (for example, **My Drive / Candidates / their name**), and a Slack message says who signed with a link to it in Suresign.
@@ -42,7 +51,16 @@ Recipes are ready-made setups. Pick one, connect its app, and it runs on every n
     When a document completes or is declined, a message in Slack or Teams gives its title, who signed, and a link to it in Suresign. The document itself is never posted.
   </Accordion>
   <Accordion title="Every document in a sheet">
-    When a document is sent, signed, completes, or is declined, its row in Google Sheets is added or updated with the title, people, status, and dates.
+    When a document is sent, signed, completes, or is declined, its row in Google Sheets, Notion, or Airtable is added or updated with the title, people, status, and dates.
+  </Accordion>
+  <Accordion title="Signed copies on the CRM">
+    When a document completes, the signed PDF and a note go on each signer's contact in HubSpot, Salesforce, Pipedrive, or Zoho CRM, or on their open deal. You can also have the deal moved to a stage you pick once everyone has signed.
+  </Accordion>
+  <Accordion title="Start from a deal stage">
+    When a deal reaches the stage you pick, Suresign fills in a one-signer template for the deal's contact and puts it in **Needs you** for the admin who connected the CRM. Nothing reaches the contact until someone selects **Send**.
+  </Accordion>
+  <Accordion title="Expiry dates on a calendar">
+    When a document is sent, an all-day event goes on the day it expires, in Google Calendar or Outlook Calendar. It comes off once the document completes, is declined, or is cancelled. Use one calendar for the workspace, or let each person keep the dates of documents they sent on their own calendar.
   </Accordion>
 </AccordionGroup>
 
@@ -55,29 +73,31 @@ A new connection does nothing until you turn on a recipe or a setting.
     Go to **Integrations** and select the app.
   </Step>
   <Step title="Connect">
-    Select **Connect**. Suresign lists what it will ask the app for before you sign in. Then sign in on the app's own page and approve access.
+    Select **Connect**. Suresign lists what it will ask the app for before you sign in. Then sign in on the app's own page and approve access. That page may name Composio, the service that connects apps for Suresign.
   </Step>
   <Step title="Choose what it does">
-    Pick a folder, channel, or spreadsheet, and turn on the recipes you want.
+    Pick a folder, channel, spreadsheet, calendar, or deal stage, and turn on the recipes you want.
   </Step>
 </Steps>
 
 Each app's page shows its recent activity. If a save or post fails, select **Retry** to try it again.
 
+You can also connect from a chat with the agent. See [Use integrations with the agent](#use-integrations-with-the-agent).
+
 ## Who can connect what
 
 - **Admins** connect apps for the whole workspace.
-- **Members** can connect their own Google Drive, Dropbox, or OneDrive to pick files when adding a document, but only after an admin approves that app. Manage your own accounts in **Settings** > **Connected accounts**.
+- **Members** can connect their own Google Drive, Dropbox, Box, or OneDrive to pick files when starting a document, and their own Google or Outlook calendar for the expiry dates of documents they sent, once an admin approves that app. Manage your own accounts in **Settings** > **Connected accounts**.
 - A member can ask an admin to connect an app, approve it, or turn on a recipe from the app's page.
 
 ## Access you can see
 
 <CardGroup cols={2}>
   <Card title="Only what the job needs" icon="scan">
-    In Google Drive, Suresign sees only the files it saved or someone chose. In Slack, it posts only where you pick.
+    In Google Drive, Suresign opens only the files it saved or someone chose. In Slack, it posts only where you pick. In a CRM, it touches only the records of people on your documents.
   </Card>
-  <Card title="Keys locked away" icon="lock">
-    Access is encrypted, stays on Suresign's servers, and is used only for what the connection does.
+  <Card title="Sign-ins kept apart" icon="lock">
+    An app's sign-in is held by Composio, never stored by Suresign, and used only for what the connection does. Composio is told only Suresign's own identifiers for your workspace and its people.
   </Card>
   <Card title="One click to end it" icon="unplug">
     Disconnect and the access ends at once. Files already saved stay yours.
@@ -94,8 +114,9 @@ The agent can see your connected apps and what failed in the last week. It can:
 - Find PDFs and Word files in your connected storage and start a draft document from one.
 - Save a completed document's signed PDF to storage, or post about it in Slack or Teams, right now.
 - Turn on a recipe for an app that is already connected (admins only).
+- Offer a **Connect** button in the chat when what you ask needs an app that isn't connected. Sign in from there, and the agent carries on when you're back. If only an admin can connect the app, it says so.
 
-Saving and posting wait for your approval, like everything else the agent does that reaches outside Suresign. See [Staying in control](/agent/staying-in-control).
+Saving, posting, and turning on a recipe wait for your approval, like everything else the agent does that reaches outside Suresign. The agent never connects an app itself. See [Staying in control](/agent/staying-in-control).
 
 ## Next steps
 
