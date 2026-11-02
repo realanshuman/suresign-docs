@@ -1,7 +1,7 @@
 ---
 title: "Suresign reminders and expiry: nudge signers and extend dates"
 sidebarTitle: "Reminders & Expiry"
-description: "Track document status, send reminders, set expiry dates, and extend deadlines. See who is waiting, who has signed, and what is still a draft. Reopen expired documents with signatures keptopen expired documents with signatures kept."
+description: "Track document status, send reminders, set expiry dates, and extend deadlines. See who is waiting, who has signed, and what is still a draft. Reopen expired documents with signatures kept."
 ---
 
 Documents do not sign themselves. People get busy, emails get buried, and deadlines slip. Suresign helps you keep things moving with reminders, expiry dates, and a clear status view. This page shows you how to use them.
@@ -13,18 +13,17 @@ Every document in your workspace shows a status so you know where things stand:
 | Status | What it means |
 | --- | --- |
 | Draft | You created the document but have not sent it yet. |
-| In progressIn progress | Sent, and at least one signer has not finished. The row shows who it is waiting on and how far along it isrow shows who it is waiting on and how far along it is. |
+| In progress | Sent, and at least one signer has not finished. The row shows who it is waiting on and how far along it is. |
 | Completed | Everyone has signed, approved, or reviewed. The sealed PDF and certificate are ready. |
-| Expired | The deadline passed and the document closed. No one can sign until you reopenreopen it. |
+| Expired | The deadline passed and the document closed. No one can sign until you reopen it. |
 | Declined | A signer chose not to sign and gave a reason. |
-| Cancelled | You stopped the document before it finished. |
 | Cancelled | You stopped the document before it finished. |
 
 These statuses update automatically. You do not need to refresh the page.
 
 ## How to set reminders
 
-Reminders nudge signers who have not finished yet. They go out based on the reminder schedule you setThey go out based on the reminder schedule you set.
+Reminders nudge signers who have not finished yet. They go out based on the reminder schedule you set.
 
 Suresign defaults to reminding every 3 days. Admins can change the default for new documents in **Settings > Sending**.
 
@@ -74,122 +73,16 @@ Plans change. If a signer needs more time, you have two options depending on whe
 
 ### How to extend a date
 
-Suresign defaults to reminding every 3 days. Admins can change the default for new documents in **Settings > Sending**.
-
 <Steps>
-  <Step title="Open reminder settings">
-    While preparing a document, find the reminders section beside the expiry date.
+  <Step title="Find the document">
+    Open the document in your workspace.
   </Step>
-  <Step title="Choose a schedule">
-    Set how often to remind. For example, every 3 days, or turn reminders off entirely by setting it to 0.
-  </Step>
-  <Step title="Send the document">
-    Once the document is sent, reminders go out automatically based on your schedule.
+  <Step title="Choose Extend">
+    Pick a new expiry date. The old links stay active. The new date must be at least one hour from now and within one year.
   </Step>
 </Steps>
 
-<Tip>
-  You can also ask the agent to remind signers for you. Say something like, "Remind Alex and Priya on Friday." The agent will schedule it and show you a card before it acts.
-</Tip>
-
-## How to set expiry dates
-
-An expiry date closes the document if no one has signed by then. This prevents old links from staying open forever.
-
-Suresign defaults to 30 days. Admins can change the default for new documents in **Settings > Sending**.
-
-<Steps>
-  <Step title="Choose an expiry">
-    Set a date when the document should close. Common choices are 7 days, 14 days, or 30 days after sending. You can pick any date up to one year ahead.
-  </Step>
-  <Step title="Send the document">
-    The expiry starts counting down from the moment you send.
-  </Step>
-</Steps>
-
-<Warning>
-  Once a document expires, the signing links stop working. Signers who try to open an expired link will see a message saying the document is closed.
-</Warning>
-
-## Extend vs Reopen: two different fixes
-
-Plans change. If a signer needs more time, you have two options depending on whether the document is still open or already expired.
-
-| Action | When to use | What happens |
-| --- | --- | --- |
-| Extend | The document is still out and has not expired yet | Moves the deadline forward. Every existing link keeps working. |
-| Reopen | The document has already expired | Sends the document out again with a new date. Only people still to act get a fresh link. Signatures already given stay intact. |
-
-### How to extend a date
-
-<Steps>
-  <Step title="Find theFind the document">
-    Open the document in your workspaceOpen the document in your workspace.
-  </Step>
-  <Step title="Choose Exthoose Extend">
-    Pick a new expiry date. The old links stay active. The new date must be at least one hour from now and within one yearPick a new expiry date. The old links stay active. The new date must be at least one hour from now and within one year.
-  </Step>
-</Steps>
-
-### How to reopen an expired documentHow to reopen an expired document
-
-<Steps>
-  <Step title="Find the expired document">
-    Look for the "Expired" status in your document list.
-  </Step>
-  <Step title="Choose Reopen">
-    Pick a new expiry date. Suresign sends fresh links to everyone still waiting to sign. Signatures already collected are preserved.
-  </Step>
-  <Step title="Add a message (optional)">
-    You can include a note explaining the delay.
-  </Step>
-</Steps>
-
-<Tip>
-  Extending or reopening does not reset any signatures already collected. Everything stays intact.
-</Tip>
-
-## How to cancel a document
-
-If you no longer need signatures, you can cancel the document.
-
-<Steps>
-  <Step title="Open the document">
-    Find it in your workspace.
-  </Step>
-  <Step title="Choose Cancel">
-    Cancel stops the document immediately. Links stop working and no one can sign.
-  </Step>
-</Steps>
-
-You cannot cancel a document that is already completed or expired. Cancelled documents show the "Cancelled" status in your list.
-
-## What the agent can do
-
-The agent can remind signers, extend dates, reopen expired documents, and tell you what expires this week. You can ask it in plain language:
-
-- "What expires this week?"
-- "Extend the Northwind NDA by 5 days."
-- "Remind everyone who has not signed yet."
-- "Reopen the expired offer letter for Jordan Lee."
-
-Every action the agent takes waits on a card for your approval before it runs, unless your admin has given the agent permission to act on its own in your workspace.
-
-<Note>
-  Automation reminders, such as chasing unsigned signers or weekly summaries, are available on Pro and Business plans. See <a href="/agent/automations">Agent automations</a> for details.
-</Note>
-
-## Next steps
-
-<CardGroup cols={2}>
-  <Card title="Templates and open links" icon="link" href="/sending/templates-and-open-links">
-    Save your reminder and expiry settings into a reusable template.
-  </Card>
-
-  <Card title="Ask the agent" icon="bot" href="/agent/ask-and-act">
-    Learn how the agent can manage reminders and deadlines for you.
-  </Card>
-</CardGroup>
+### How to reopen an expired document
 
 <Steps>
   <Step title="Find the expired document">
